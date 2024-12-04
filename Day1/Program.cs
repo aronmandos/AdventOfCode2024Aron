@@ -1,9 +1,8 @@
-﻿using System.Text.Json;
-
-namespace ConsoleApp1;
+﻿namespace Day1;
 
 internal static class Program
 {
+    // ReSharper disable once UnusedParameter.Local
     private static void Main(string[] args)
     {
         Console.WriteLine("# Day 1");
@@ -22,11 +21,11 @@ internal static class Program
         Console.WriteLine("## Day 1 Part 1");
         Console.WriteLine();
         
-        var fileName = "input.txt";
-        using StreamReader reader = File.OpenText(fileName);
+        const string fileName = "input.txt";
+        using var reader = File.OpenText(fileName);
 
 
-        var list = new List<(string left, string right)>();
+        //var list = new List<(string left, string right)>();
         var listLeft = new List<double>();
         var listRight = new List<double>();
         while (reader.ReadLine() is { } line)
@@ -35,7 +34,7 @@ internal static class Program
             try
             {
                 var item = line.Split("   ");
-                list.Add((item[0], item[1]));
+                //list.Add((item[0], item[1]));
                 listLeft.Add(Convert.ToDouble(item[0]));
                 listRight.Add(Convert.ToDouble(item[1]));
             }
@@ -51,11 +50,11 @@ internal static class Program
         var leftOrdered = listLeft.Order().ToList();
         var rightOrdered = listRight.Order().ToList();
 
-        var maxLength = leftOrdered.Count > rightOrdered.Count ? leftOrdered.Count : rightOrdered.Count;
+        //var maxLength = leftOrdered.Count > rightOrdered.Count ? leftOrdered.Count : rightOrdered.Count;
         var minLength = leftOrdered.Count > rightOrdered.Count ? rightOrdered.Count : leftOrdered.Count;
 
         var total = 0.0;
-        for (int i = 0; i < minLength; i++)
+        for (var i = 0; i < minLength; i++)
         {
             Console.WriteLine($"{leftOrdered[i]}, {rightOrdered[i]} :: {Math.Abs(leftOrdered[i] - rightOrdered[i])}");
             total += Math.Abs(leftOrdered[i] - rightOrdered[i]);
@@ -74,7 +73,7 @@ internal static class Program
         using var reader = File.OpenText(fileName);
 
 
-        var list = new List<(string left, string right)>();
+        //var list = new List<(string left, string right)>();
         var listLeft = new List<double>();
         var listRight = new List<double>();
         while (reader.ReadLine() is { } line)
@@ -83,7 +82,7 @@ internal static class Program
             try
             {
                 var item = line.Split("   ");
-                list.Add((item[0], item[1]));
+                //list.Add((item[0], item[1]));
                 listLeft.Add(Convert.ToDouble(item[0]));
                 listRight.Add(Convert.ToDouble(item[1]));
             }
@@ -99,8 +98,8 @@ internal static class Program
         var leftOrdered = listLeft.Order().ToList();
         var rightOrdered = listRight.Order().ToList();
 
-        var maxLength = leftOrdered.Count > rightOrdered.Count ? leftOrdered.Count : rightOrdered.Count;
-        var minLength = leftOrdered.Count > rightOrdered.Count ? rightOrdered.Count : leftOrdered.Count;
+        //var maxLength = leftOrdered.Count > rightOrdered.Count ? leftOrdered.Count : rightOrdered.Count;
+        //var minLength = leftOrdered.Count > rightOrdered.Count ? rightOrdered.Count : leftOrdered.Count;
 
         var total = 0.0;
 

@@ -2,18 +2,26 @@
 
 namespace ConsoleApp1;
 
-// ReSharper disable once ClassNeverInstantiated.Global
-// ReSharper disable once ArrangeTypeModifiers
-class Program
+internal static class Program
 {
-    // ReSharper disable once ArrangeTypeMemberModifiers
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
+        Console.WriteLine("# Day 1");
+        Console.WriteLine();
+        DayOnePartOne();
         DayOnePartTwo();
+        
+        Console.WriteLine();
+        Console.WriteLine("# Ending");
     }
 
     private static void DayOnePartOne()
     {
+        
+        Console.WriteLine();
+        Console.WriteLine("## Day 1 Part 1");
+        Console.WriteLine();
+        
         var fileName = "input.txt";
         using StreamReader reader = File.OpenText(fileName);
 
@@ -59,6 +67,9 @@ class Program
 
     private static void DayOnePartTwo()
     {
+        Console.WriteLine();
+        Console.WriteLine("## Day 1 Part 2");
+        Console.WriteLine();
         const string fileName = "input.txt";
         using var reader = File.OpenText(fileName);
 
